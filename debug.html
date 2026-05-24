@@ -23,28 +23,47 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h5>Code gốc (có lỗi):</h5>
-                <pre class="bg-light p-3 border">function addCourse(newCourse, list) {<br>
-    if (mssv % 2 !== 0) {<br>
-        list.push(newCourse);<br>
-    } else {<br>
-        list.unshift(newCourse);<br>
-    }<br>
-    renderTable(list);<br>
-}</pre>
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h5>Nguyên văn đoạn mã bị lỗi (theo đề bài)</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre><code>function addCourse(newCourse, list) {
+    if (mssv % 2 !== 0) {
+        list.push(newCourse);
+    } else {
+        list.unshift(newCourse);
+    }
+    renderTable(list);
+}</code></pre>
+                    </div>
+                </div>
             </div>
+
             <div class="col-lg-6">
-                <h5>Code đã sửa:</h5>
-                <pre class="bg-light p-3 border">function addSkill(newSkill, list) {<br>
-    const mssv = 2544800316;<br>
-    if (mssv % 2 === 0) {<br>
-        list.push(newSkill);<br>
-    } else {<br>
-        list.unshift(newSkill);<br>
-    }<br>
-    renderTable(list);<br>
-}</pre>
-                <p><strong>Giải thích lỗi:</strong> Tên hàm sai, điều kiện if ngược, mssv chưa khai báo.</p>
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5>Đoạn mã đã sửa + Chú thích</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre><code>function addSkill(newSkill, list) {
+    const mssv = 2544800316;   // MSSV của sinh viên
+
+    if (mssv % 2 === 0) {      // Sửa điều kiện theo đề: chẵn thì push (cuối)
+        list.push(newSkill);
+    } else {
+        list.unshift(newSkill); // Lẻ thì unshift (đầu)
+    }
+    renderTable(list);
+}</code></pre>
+                        <p><strong>Lỗi đã sửa:</strong></p>
+                        <ul>
+                            <li>Tên hàm sai: <code>addCourse</code> → <code>addSkill</code></li>
+                            <li>Điều kiện if bị ngược</li>
+                            <li>Biến <code>mssv</code> chưa được khai báo</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
