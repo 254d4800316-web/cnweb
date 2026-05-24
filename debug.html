@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Sửa lỗi mã</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">🐞 Trang Debug - Sửa lỗi mã nguồn</h1>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h5>Đoạn mã bị lỗi (theo đề bài)</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-3 border"><code>function addCourse(newCourse, list) {
+    if (mssv % 2 !== 0) {
+        list.push(newCourse);
+    } else {
+        list.unshift(newCourse);
+    }
+    renderTable(list);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h5>Đoạn mã đã sửa + Giải thích</h5>
+                    </div>
+                    <div class="card-body">
+                        <pre class="bg-light p-3 border"><code>function addSkill(newSkill, list) {
+    // Lấy MSSV của sinh viên
+    const mssv = 2544800316;   // Thay bằng MSSV thật của em
+
+    if (mssv % 2 === 0) {
+        list.push(newSkill);     // Thêm vào cuối mảng (nếu MSSV chẵn)
+    } else {
+        list.unshift(newSkill);  // Thêm vào đầu mảng (nếu MSSV lẻ)
+    }
+    
+    renderTable(list);           // Gọi hàm render lại bảng
+}
+
+// Giải thích lỗi:
+// 1. Tên hàm sai (addCourse → addSkill)
+// 2. Điều kiện if bị ngược (mssv % 2 !== 0)
+// 3. Biến mssv chưa được khai báo
+// 4. Comment chú thích rõ ràng hơn</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-info">
+            <strong>Yêu cầu cá nhân hóa:</strong> Em đang làm việc với máy tính tại phòng trường.
+        </div>
+    </div>
+</body>
+</html>
